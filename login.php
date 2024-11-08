@@ -1,9 +1,9 @@
 <?php
 // Database connection parameters
-$host = 'your-rds-endpoint';  // RDS endpoint
-$dbname = 'your-database-name';
-$username = 'your-database-username';
-$password = 'your-database-password';
+$host = 'cybr-328-rds.cj24gusco7ni.us-east-2.rds.amazonaws.com';  // RDS endpoint
+$dbname = 'CYBR328';
+$username = 'admin';
+$password = 'CYBR328password';
 
 // Create connection
 $conn = new mysqli($host, $username, $password, $dbname);
@@ -16,7 +16,7 @@ if ($conn->connect_error) {
 // Retrieve form data
 $user = $_POST['username'];
 $email = $_POST['email'];
-$pass = password_hash($_POST['password'], PASSWORD_BCRYPT); // Hash password for security
+$pass = $_POST['password'];
 $ssn_last4 = $_POST['ssn'];
 
 // Prepare and bind
