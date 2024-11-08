@@ -28,6 +28,7 @@ $stmt->bind_param("ssss", $user, $email, $pass, $ssn_last4);
 // Execute the query
 if ($stmt->execute()) {
     echo "Registration successful!";
+    echo "<a href='login.html'><button>Back</button></a>";
 } else {
     echo "Error: " . $stmt->error;
 }
