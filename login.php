@@ -13,11 +13,13 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Retrieve form data
-$user = $_POST['username'];
-$email = $_POST['email'];
-$pass = $_POST['password'];
-$ssn_last4 = $_POST['ssn'];
+if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+    // Retrieve form data
+    $user = $_POST['username'];
+    $email = $_POST['email'];
+    $pass = $_POST['password'];
+    $ssn_last4 = $_POST['ssn'];
+}
 
 // Prepare and bind
 $stmt = $conn->prepare("INSERT INTO users (username, email, password, ssn_last4) VALUES (?, ?, ?, ?)");
