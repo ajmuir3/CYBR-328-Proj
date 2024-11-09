@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 // Prepare and bind
 $stmt = $conn->prepare("INSERT INTO friends (name, email, phone) VALUES (?, ?, ?)");
-$stmt->bind_param("ssss", $user, $email, $phone);
+$stmt->bind_param("sss", $user, $email, $phone);
 
 // Execute the query
 if ($stmt->execute()) {
