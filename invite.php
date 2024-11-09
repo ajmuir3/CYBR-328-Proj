@@ -14,7 +14,8 @@ $stmt->bind_param("ssss", $user, $email, $phone);
 
 // Execute the query
 if ($stmt->execute()) {
-    header("Location: welcome.html")
+    header("Location: welcome.html");
+    exit;
 } else {
     echo "Error: " . $stmt->error;
 }
