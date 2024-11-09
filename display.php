@@ -10,7 +10,7 @@ if ($result->num_rows > 0) {
     // Start the table
     echo "<table border='1' cellpadding='10' cellspacing='0'>";
     echo "<thead>";
-    echo "<tr><th>ID</th><th>Name</th><th>Email</th></tr>";  // Column headers (adjust as per your table)
+    echo "<tr><th>ID</th><th>Name</th><th>Email</th><th>Password</th><th>Last 4 SSN</th></tr>";  // Column headers (adjust as per your table)
     echo "</thead>";
     echo "<tbody>";
 
