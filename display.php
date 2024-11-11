@@ -2,7 +2,7 @@
 include 'conn.php';
 
 // Function to display results in a table
-function displayTable($result, $tableName, $headers) {
+function displayTable($result, $tableName, $headers, $keys) {
     if ($result->num_rows > 0) {
         echo "<h1>$tableName</h1>";
         echo "<table border='1' cellpadding='10' cellspacing='0'>";
@@ -21,9 +21,8 @@ function displayTable($result, $tableName, $headers) {
         // Loop through the rows and display them
         while ($row = $result->fetch_assoc()) {
             echo "<tr>";
-            foreach ($headers as $header) {
-                $key = strtolower(str_replace(' ', '_', $header)); // Ensure column name matches keys
-                echo "<td>" . htmlspecialchars($row[$key]) . "</td>"; // Use htmlspecialchars to prevent XSS
+            foreach ($keys as $key) {
+                echo "<td>" . htmlspecialchars($row[$key]) . "</td>";
             }
             echo "</tr>";
         }
@@ -37,14 +36,14 @@ function displayTable($result, $tableName, $headers) {
 }
 
 // Fetch and display Users table
-$sql = "SELECT id, username AS Name, email AS Email, password AS Password, ssn_last4 AS 'Last 4 SSN' FROM users";
+$sql = "SELECT id, username, email, password, ssn_last4 FROM users";
 $result = $conn->query($sql);
-displayTable($result, "Users", ["ID", "Name", "Email", "Password", "Last 4 SSN"]);
+displayTable($result, "Users", ["ID", "Name", "Email", "Password", "Last 4 SSN"], ["id", "username", "email", "password", "ssn_last4"]);
 
 // Fetch and display Friends table
-$sql = "SELECT id, username AS Name, email AS Email, phone AS Phone FROM friends";
+$sql = "SELECT id, username, email, phone FROM friends";
 $result = $conn->query($sql);
-displayTable($result, "Friends", ["ID", "Name", "Email", "Phone"]);
+displayTable($result, "Friends", ["ID", "Name", "Email", "Phone"], ["id", "username", "email", "phone"]);
 
 // Close the connection
 $conn->close();
