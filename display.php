@@ -1,6 +1,9 @@
 <?php
 include 'conn.php';
 
+echo "<a href='welcome.html'><button>Back to welcome.html</button></a>";
+echo "<a href='login.html'><button>Back to login.html</button></a>";
+
 // Function to display results in a table
 function displayTable($result, $tableName, $headers, $keys) {
     if ($result->num_rows > 0) {
