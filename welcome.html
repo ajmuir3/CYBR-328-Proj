@@ -7,32 +7,34 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <img src="Riverside-healthcare-logo.jpg">
-    <h1>Welcome to Riverside Healthcare</h1>
-    <table>
-        <tr>
-            <td>
+    <div class="container">
+        <img src="Riverside-healthcare-logo.jpg" alt="Riverside Healthcare Logo">
+        <h1>Welcome to Riverside Healthcare</h1>
+
+        <div class="content">
+            <div class="news-section">
                 <h2>Recent News</h2>
-                <a href="https://youtu.be/dQw4w9WgXcQ?feature=shared"><button>Clcik Here for More News</button></a>
-            </td>
-        </tr>
-        <tr>
-            <td>
+                <a href="https://youtu.be/dQw4w9WgXcQ?feature=shared">
+                    <button>Click Here for More News</button>
+                </a>
+            </div>
+
+            <div class="invite-section">
                 <h2>Invite Friends to Riverside Healthcare</h2>
                 <form action="invite.php" method="POST">
-                    <label for="name">First Name:</label><br>
-                    <input type="text" id="name" name="name" required><br><br>
-            
-                    <label for="email">Email:</label><br>
-                    <input type="email" id="email" name="email" required><br><br>
-            
-                    <label for="phone">Phone Number:</label><br>
-                    <input type="tel" id="phone" name="phone" required><br><br>
-                        
+                    <label for="name">First Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" required>
+
                     <button type="submit">Invite to Riverside Healthcare</button>
                 </form>
-            </td>
-        </tr>
-    </table>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
