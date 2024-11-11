@@ -41,9 +41,9 @@ $result = $conn->query($sql);
 displayTable($result, "Users", ["ID", "Name", "Email", "Password", "Last 4 SSN"], ["id", "username", "email", "password", "ssn_last4"]);
 
 // Fetch and display Friends table
-$sql = "SELECT id, username, email, phone FROM friends";
-$result = $conn->query($sql);
-displayTable($result, "Friends", ["ID", "Name", "Email", "Phone"], ["id", "username", "email", "phone"]);
+$sql = "SELECT id, name, email, phone FROM friends"; // Ensure this query is correct
+$result = $conn->query($sql); // Fetch the result again for the Friends table
+displayTable($result, "Friends", ["ID", "Name", "Email", "Phone"], ["id", "name", "email", "phone"]);
 
 // Close the connection
 $conn->close();
