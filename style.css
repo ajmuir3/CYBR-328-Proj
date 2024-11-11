@@ -59,6 +59,17 @@ button:hover {
   background-color: #0056b3;
 }
 
+.secret {
+  width: 40%;
+  padding: 5px;
+  background-color: #FFFFFF;
+  color: grey;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 10px;
+}
+
 img {
   max-width: 90%;
   height: auto;
